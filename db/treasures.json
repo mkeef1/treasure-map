@@ -1,0 +1,33 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"gold",
+  "photo":"http://www.silverdoctors.com/wp-content/uploads/2013/08/0831_gold_630x420-1358881868486.jpg",
+  "spot":"Nashville",
+  "coordinates":{"lat":36.166667, "lng":-86.78333299999997},
+  "difficulty":"easy",
+  "hints":"Find oak tree. Walk north 15 steps, Turn around and walk 7 steps",
+  "found":"no"
+}
+
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"diamonds",
+  "photo":"http://www.swissdiamond.com/wp-content/uploads/Why-Diamonds_Intro-Slid_whitee.jpg",
+  "spot":"Murfreesboro",
+  "coordinates":{"lat":35.8617019, "lng":-86.4204489},
+  "difficulty":"medium",
+  "hints":"Find the tree stump. Look for a red sign. Go 3 steps left of red sign.",
+  "found":"no"
+}
+
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"porsche",
+  "photo":"http://o.aolcdn.com/hss/storage/adam/6e58b30fb96bf0d28d10fa6d290682e7/porsche-exclusive-911t-cab.jpg",
+  "spot":"Hendersonville",
+  "coordinates":{"lat":36.3099098, "lng":-86.5977875},
+  "difficulty":"hard",
+  "hints":"Go to car garage.  Walk up three levels.  Look for bue bird.",
+  "found":"no"
+}
+

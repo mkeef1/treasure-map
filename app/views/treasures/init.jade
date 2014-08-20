@@ -1,0 +1,37 @@
+extends ../shared/template
+block content
+  form(role="form", method='post', actions='/treasures')
+    .col-xs-6
+      .form-group
+        label(for="name") name
+        input#name.form-control(type="text", placeholder="Ex. gold")
+      .form-group
+        label(for="spot") Location
+        input#spot.form-control(type="text", placeholder="Ex. Nashville")
+      .dropdown
+        button#dropdownMenu1.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown") Difficulty
+          Dropdown
+          span.caret
+        ul.dropdown-menu(role="menu", aria-labelledby="Difficulty")
+          li(role="presentation")
+            a(role="menuitem", tabindex="-1", href="#") Easy
+          li(role="presentation")
+            a(role="menuitem", tabindex="-1", href="#") Medium
+          li(role="presentation")
+            a(role="menuitem", tabindex="-1", href="#") Hard
+
+      .row
+        .col-xs-6
+          form(method='post', enctype='multipart/form-data')
+            .form-group
+              label(for='photo') Photo
+              input.form-control#photo(type='file', name='photo', multiple=true)
+
+      .row
+        .col-xs-6
+          label(for="hints") Hints
+          textarea.form-control#hints(rows="3", placeholder="Ex. Look for Oak tree.  Walk 15 steps north.")
+          button.btn.btn-primary(type='submit') Add Treasure
+    .col-xs-6
+  block scripts
+    script(src='/js/user/new-treasure.js')
