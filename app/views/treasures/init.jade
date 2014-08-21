@@ -1,47 +1,32 @@
 extends ../shared/template
 block content
-  form(role="form", method='post', actions='/treasures')
+  form(role="form", method='post', action='/treasures')
     .col-xs-6
+      input#lat(type='hidden', name='lat')
+      input#lng(type='hidden', name='lng')
       .form-group
         label(for="name") name
-        input#name.form-control(type="text", placeholder="Ex. gold")
+        input#name.form-control(name='name', type="text", placeholder="Ex. gold")
       .form-group
         label(for="spot") Location
-        input#spot.form-control(type="text", placeholder="Ex. Nashville")
-      .dropdown
-        button#difficulty.form-control.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown") Difficulty
-          Dropdown
-          span.caret
-        ul.dropdown-menu(role="menu", aria-labelledby="Difficulty")
-          li(role="presentation")
-            a(role="menuitem", tabindex="-1", href="#") Easy
-          li(role="presentation")
-            a(role="menuitem", tabindex="-1", href="#") Medium
-          li(role="presentation")
-            a(role="menuitem", tabindex="-1", href="#") Hard
-
-      .row
+        input#spot.form-control(name='spot', type="text", placeholder="Ex. Nashville")
+      .form-group
+        label(for='difficulty') Difficulty
+        select.form-control#difficulty(name='difficulty', type='text')
+          option Easy
+          option Medium
+          option Hard
+       .form-group
         .col-xs-12
-          form(method='post', enctype='multipart/form-data')
-            .form-group
-              label(for='photo') Photo
-              input.form-control#photo(type='file', name='photo', multiple=true)
+          label(for='photo') Photo
+          input.form-control#photo(name='photo', type='file')
 
-      .row
+      .form-group
         .col-xs-12
           label(for="hints") Hints
-          textarea.form-control#hints(rows="3", placeholder="Ex. Look for Oak tree.  Walk 15 steps north.")
+          textarea.form-control#hints(name='hints', rows="3", placeholder="Ex. Look for Oak tree.  Walk 15 steps north.")
 
-      .row
-       .col-xs-2
-        label(for="found") Found?
-          .checkbox
-            input.form-control#found(type='checkbox', value=false)
-            | Yes
-          .checkbox
-            input.form-control#found(type='checkbox', value=true)
-            | No
-      .row
+      .form-group
         button.btn.btn-primary(type='submit') Add Treasure
 
 block scripts

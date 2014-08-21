@@ -15,7 +15,7 @@ block content
             th Found
         tbody
           each treasure in treasures
-            tr(data-name=treasure.name, data-lat=treasure.coordinates.lat, data-lng=treasure.coordinates.lng)
+            tr(data-name=treasure.name, data-lat=treasure.lat, data-lng=treasure.lng)
               td: a(href='/treasures/#{treasure._id}')= treasure.name
               td= treasure.spot
               td= treasure.difficulty

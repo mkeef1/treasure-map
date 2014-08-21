@@ -5,7 +5,8 @@ function Treasure(t){
   this.name = t.name;
   this.photo = t.photo;
   this.spot = t.spot;
-  this.coordinates = {lat:parseFloat(t.lat), lng:parseFloat(t.lng)};
+  this.lat = parseFloat(t.lat);
+  this.lng = parseFloat(t.lng);
   this.difficulty = t.difficulty;
   this.hints = t.hints;
   this.found = false;
@@ -19,7 +20,7 @@ Treasure.all = function(cb){
   Treasure.collection.find().toArray(cb);
 };
 
-Treasure.create = function(t, cb){
+Treasure.save = function(t, cb){
   var o = new Treasure(t);
   Treasure.collection.save(o, cb);
 };
