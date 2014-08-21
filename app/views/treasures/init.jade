@@ -9,7 +9,7 @@ block content
         label(for="spot") Location
         input#spot.form-control(type="text", placeholder="Ex. Nashville")
       .dropdown
-        button#dropdownMenu1.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown") Difficulty
+        button#difficulty.form-control.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown") Difficulty
           Dropdown
           span.caret
         ul.dropdown-menu(role="menu", aria-labelledby="Difficulty")
@@ -21,17 +21,28 @@ block content
             a(role="menuitem", tabindex="-1", href="#") Hard
 
       .row
-        .col-xs-6
+        .col-xs-12
           form(method='post', enctype='multipart/form-data')
             .form-group
               label(for='photo') Photo
               input.form-control#photo(type='file', name='photo', multiple=true)
 
       .row
-        .col-xs-6
+        .col-xs-12
           label(for="hints") Hints
           textarea.form-control#hints(rows="3", placeholder="Ex. Look for Oak tree.  Walk 15 steps north.")
-          button.btn.btn-primary(type='submit') Add Treasure
-    .col-xs-6
-  block scripts
-    script(src='/js/user/new-treasure.js')
+
+      .row
+       .col-xs-2
+        label(for="found") Found?
+          .checkbox
+            input.form-control#found(type='checkbox', value=false)
+            | Yes
+          .checkbox
+            input.form-control#found(type='checkbox', value=true)
+            | No
+      .row
+        button.btn.btn-primary(type='submit') Add Treasure
+
+block scripts
+  script(src='/js/user/new-treasure.js')
