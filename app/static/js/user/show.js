@@ -11,7 +11,7 @@
     addMarker(pos.lat, pos.lng, pos.name);
   });
 
-    $('#found').on('click', false);
+  $('#found').on('click', false);
 
 
   function addMarker(lat, lng, name){
