@@ -19,7 +19,7 @@ block content
        .form-group
         .col-xs-12
           label(for='photo') Photo
-          input.form-control#photo(name='photo', type='file')
+          input.form-control#photo(name='photo', type='file', enctype='multipart/form-data')
 
       .form-group
         .col-xs-12
@@ -29,12 +29,6 @@ block content
       .form-group
         button.btn.btn-primary(type='submit') Add Treasure
 
-    .row
-      .col-xs-12
-          .form-group
-            label(for='photo') Photo
-            input.form-control#photo(method='post', type='file', name='photo')
-            button.btn.btn-success(type='submit') Upload Photos
 
 block scripts
   script(src='/js/user/new-treasure.js')

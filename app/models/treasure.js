@@ -31,8 +31,7 @@ Treasure.create = function(t, cb){
 Treasure.findById = function(id, cb){
   var _id = Mongo.ObjectID(id);
   Treasure.collection.findOne({_id:_id}, function(err, obj){
-    var treasure = changePrototype(obj);
-    cb(treasure);
+    cb(err, _.create(Treasure.prototype, obj));
   });
 };
 

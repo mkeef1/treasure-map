@@ -7,8 +7,11 @@ exports.init = function(req, res){
 };
 
 exports.create = function(req, res){
-  Treasure.create(req.body, function(){
-    res.redirect('/treasures');
+  var form = new mp.Form();
+  from.parse(req, function(err, fields, file){
+    Treasure.create(fields, file, function(){
+      res.redirect('/treasures');
+    });
   });
 };
 
@@ -26,20 +29,10 @@ exports.show = function(req, res){
 
 exports.found = function(req, res){
   Treasure.findById(req.params.id, function(err, treasure){
-    treasure.toggle();
+    treasure.found = true;
     treasure.save(function(){
       res.redirect('/treasures');
     });
   });
 };
 
-exports.uploadPhoto = function(req, res){
-  Treasure.findById(req.params.id, function(err, treasure){
-    var form = new mp.Form();
-    form.parse(req, function(err, fields, files){
-      treasure.uploadPhoto(files, function(){
-        res.redirect('/treasures/' + req.params.id);
-      });
-    });
-  });
-};
