@@ -6,7 +6,7 @@ block content
     .col-xs-6
       .row
         .col-xs-12
-          #treasure(data-name=treasure.name, data-lat=treasure.lat, data-lng=treasure.lng)
+          #treasure(data-name='#{treasure.spot}', data-lat='#{treasure.lat}', data-lng='#{treasure.lng}')
             .page-header: h1= treasure.name
       .row
         .col-xs-12
@@ -16,6 +16,9 @@ block content
       .row
         .col-xs-12
           img.img-thumbnail(src=treasure.photo)
-    button.btn.btn-success#found(data-found=treasure.found, type="submit", method="post", action="/treasures") Found It!
+    
+    form(method='post', action='/treasures/#{treasure._id}/found')
+      button.btn.btn-success#found(type="submit") Found It!
+
 block scripts
   script(src='/js/user/show.js')
