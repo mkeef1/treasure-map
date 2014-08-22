@@ -26,8 +26,8 @@ exports.show = function(req, res){
 
 exports.found = function(req, res){
   Treasure.findById(req.params.id, function(err, treasure){
-    Treasure.toggle();
-    Treasure.save(function(){
+    treasure.toggle();
+    treasure.save(function(){
       res.redirect('/treasures');
     });
   });
